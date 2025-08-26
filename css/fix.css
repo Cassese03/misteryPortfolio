@@ -17,6 +17,45 @@
     margin-top: 3rem;
 }
 
+/* Fix per il pulsante "Torna in alto" che va in overflow */
+.back-to-top {
+    position: fixed !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    background: #457efa !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    z-index: 999 !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15) !important;
+    overflow: visible !important;
+    border: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-decoration: none !important;
+}
+
+.back-to-top:hover {
+    background: #2a4c94 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    transform: translateY(-5px);
+}
+
+/* Assicura che ci sia abbastanza spazio alla fine della pagina */
+body {
+    margin-bottom: 60px !important;
+    overflow-x: hidden !important;
+}
+
+html {
+    overflow-x: hidden !important;
+}
+
 /* Miglioramenti responsivi per le card del portfolio */
 .portfolio-card {
     height: 100%;

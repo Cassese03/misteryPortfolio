@@ -686,10 +686,12 @@
     <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    
+    <!-- Extra padding at the bottom of the page to prevent overflow issues -->
+    <div style="height: 50px;"></div>
 
 
-    <!-- JavaScript Libraries -->
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -699,6 +701,28 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+    <link rel="stylesheet" href="css/fix.css">
+    
+    <!-- Script per assicurarci che il pulsante "Torna in alto" funzioni correttamente -->
+    <script>
+        $(document).ready(function() {
+            // Mostra sempre il pulsante Back to Top ma con opacità ridotta quando in cima
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 200) {
+                    $('.back-to-top').css('opacity', '1');
+                } else {
+                    $('.back-to-top').css('opacity', '0.6');
+                }
+            });
+            
+            // Smooth scroll quando si clicca sul pulsante
+            $('.back-to-top').click(function() {
+                $('html, body').animate({scrollTop: 0}, 800);
+                return false;
+            });
+        });
+    </script>
 
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
